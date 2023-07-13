@@ -2,6 +2,8 @@
 # coding: utf-8
 
 import re
+from tkinter import *
+from tkinter import filedialog
 
 
 
@@ -122,7 +124,7 @@ class Recipes:
 
 
 
-        
+
     def get_combinations(self, ingredients, number_of_cells):
         """
         This function returns the different
@@ -347,6 +349,7 @@ class Recipes:
         print(scorecard)
         
         scorecard_file = path + str("chef_scorecard.txt")
+        self.scorecard_file = scorecard_file
         with open(scorecard_file, 'w') as f:
             for line in lines[:2]:
                 f.write(line)
@@ -397,3 +400,4 @@ class Recipes:
             
             f.write(re.sub("\n", "", lines[2]))
             f.write(self.get_separators(max_cell_lengths, len(headers), add_column_separation = False)[1:])
+            
