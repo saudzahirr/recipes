@@ -230,8 +230,6 @@ class Recipes:
             max_cell_length = column_width if column_width != 0 else max_cell_lengths[a]
             spacing = max_cell_length - len(header)
             
-            # print(f"{header}, {len(header)}, {max_cell_length}, {spacing}")
-            
             if a == 0:
                 # Filling the first cell.
                 title = column_separator + self.get_aligned_text(header, spacing) + column_separator
@@ -274,6 +272,14 @@ class Recipes:
 
 
     def try_recipe(self):
+        """
+        This functions creates
+        a chef scorecard to rate
+        recipes taste, texture and
+        looks and the total rating
+        of the recipe.
+        """
+        
         recipe_name = input("Enter recipe name: ")
         
         if recipe_name not in self.names:
@@ -319,7 +325,7 @@ class Recipes:
             texture = str(texture) + "/10"
             looks = str(looks) + "/5"
             total = str(total) + "/30"
-            # scorecard.append([taste, texture, looks, total])
+            
             scorecard[index - 5] = [taste, texture, looks, total]
 
             enter = input("Press enter key to continue.")
@@ -341,10 +347,7 @@ class Recipes:
         
         for max_cell_length in max_cell_lengths:
             if column_width != 0 and column_width < max_cell_length:
-                raise Exception("Column width should be greater than or equal to the maximum cell")
-
-        # scorecard.insert(0, headers)
-        print(scorecard)
+                raise Exception("Column width should be greater than or equal to the maximum cell")  
         
         scorecard_file = path + str("chef_scorecard.txt")
         self.scorecard_file = scorecard_file
@@ -393,9 +396,7 @@ class Recipes:
                     extension += self.get_aligned_text(string, spacing) + column_separator
                     
                 f.write(extension)
-                # del scorecard[scorecard.index(score)]
                 f.write("\n")
             
             f.write(re.sub("\n", "", lines[2]))
             f.write(self.get_separators(max_cell_lengths, len(headers), add_column_separation = False)[1:])
-            
