@@ -2,8 +2,6 @@
 # coding: utf-8
 
 import re
-from tkinter import *
-from tkinter import filedialog
 
 
 
