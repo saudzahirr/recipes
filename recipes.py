@@ -256,8 +256,13 @@ class Recipes:
 
 
 
-recipes = Recipes(file_path)
-recipes.get_recipe_names()
-recipes.get_ingredients()
-recipes.get_recipes(serial_title = "Combinations", column_separator = "|", separator = "-
-                      text_position = "center", left_padding = 1, right_padding = 2, column_width = 0)
+def main():
+    recipes = Recipes(file_path)
+    recipes.get_recipe_names()
+    recipes.get_ingredients()
+    
+    recipes.get_recipes(serial_title = "Combinations", column_separator = "|", separator = "-",
+                      text_position = "center", left_padding = 0, right_padding = 2, column_width = 0)
+
+if __name__ == "__main__":
+    main()
