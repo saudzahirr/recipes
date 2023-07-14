@@ -8,11 +8,17 @@ This code is designed to assist in organizing and generating recipe files. It pr
 
 - Extract names of dishes from a recipes data file.
 - Extract ingredients and their weights for each dish.
+- Generates combinations of ingredients for different recipes.
 - Generate recipe files with different combinations of ingredients.
+- Allows the chef to rate each combination based on taste, texture, and looks.
+- Calculates the total rating for each combination.
+- Generates a chef scorecard file with the ratings for all combinations.
+- Provides a display of the chef's scorecard using Tkinter.
 
 ## Usage
 
-1. Ensure you have a recipes data file in the specified format.
+1. Ensure that the recipe data file "recipes_data.txt" is present in the "Recipes" folder otherwise update the `file_path` variable in the `__main__.py` with the correct path to your recipes data file (By default it should be in "Recipes" folder).
+2. Ensure you have a recipes data file in the specified format.
    
    ```
    [Recipe Name]:
@@ -26,31 +32,18 @@ This code is designed to assist in organizing and generating recipe files. It pr
    ----------------------------------------------------------------
    ...
    ```
-2. Update the `file_path` variable in the code with the correct path to your recipes data file.
-3. Create an instance of the `Recipes` class with the file path:
-
-   ```python
-   recipes = Recipes(file_path)
+4. Modify the main() function in the `__main__.py` file if needed.
+5. Run the program by executing the following command:
+   ```Shell
+   python __main__.py
    ```
-4. Call the `get_recipe_names()` method to extract the names of the dishes:
-
-   ```python
-   recipe_names = recipes.get_recipe_names()
-   ```
-5. Call the `get_ingredients()` method to extract the ingredients for each dish:
-
-   ```python
-   ingredients = recipes.get_ingredients()
-   ```
-6. Optionally, modify the parameters for the `write_recipes()` method to customize the generated recipe files. By default, the method generates files with a serial title of 
-   "Combinations", a separator of "-", and centers the text:
-
-   ```python
-   recipes.write_recipes(serial_title="Combinations", separator="-", text_position="center")
-   ```
-7. By default, the output format is as:
+5. The program will generate separate recipe files in the "Recipes" folder, each containing various combinations of ingredients for a specific recipe.
+6. By default, the output format of recipe file is as:
 
    ```
+   [Recipe Name].
+   
+   -----------------------------------------------------------------------------------------------------
    |  Combinations  |     [Ingredient 1]      |      [Ingredient 2]      |     [Ingredient 3]      | ...
    |----------------|-------------------------|--------------------------|-------------------------| ...
    |       1        |      [Quantity 1]       |       [Quantity 1]       |      [Quantity 1]       | ...
@@ -60,20 +53,42 @@ This code is designed to assist in organizing and generating recipe files. It pr
    .
    .
    .
-   ---------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------
    ```
+7. The program will prompt you to enter the name of a recipe to rate the combinations.
+8. For each combination, enter the taste, texture, and looks ratings when prompted. The total rating will be calculated automatically.
+9. Press the Enter key to continue rating the next combination.
+10. Once you have finished rating all combinations, a chef scorecard file "chef_scorecard.txt" will be generated in the "Recipes" folder.
+11. A window will pop up automatically and display the scorecard. For instance:
+<br/>
+<img src="https://github.com/saudzahirr/recipes/assets/76210541/5550934a-634c-42a8-a547-cd080e840e21">
+<br/>
+    
 ## Methods
-1. `get_recipe_names()`
-   This method returns a list of names of the dishes extracted from the recipes data file.
-
-2. `get_ingredients()`
-   This method returns a dictionary with names of dishes as keys and a subdictionary with ingredient names as keys and a list of possible weights as values.
-
-3. `write_recipes(serial_title="Combinations", separator="-", text_position="center")`
-   This method generates recipe files with different combinations of ingredients. It accepts the following optional parameters:
-   - serial_title: The title for the serial number column in the generated files. Defaults to "Combinations".
-   - separator: The character used for separating cells in the generated files. Defaults to "-".
-   - text_position: The alignment of the text in each cell. Can be "left", "center", or "right". Defaults to "center".
+### `recipes.py`
+1. `__init__(self, recipes_file_name, output_file_path, serial_title, column_separator, separator, text_position, left_padding, right_padding, column_width)`
+   - Constructor method that initializes the `Recipes` object with various parameters, such as file paths, separators, padding, and column width.
+   - `recipes_file_name`: The name of the file recipes_data.txt containing the recipe data.
+   - `output_file_path`: The path where the generated recipe files and scorecard file will be saved. By default it is `"Recipes/"`.
+   - `serial_title`: The title to be used for the serial number column in the generated recipe files. By default it is `"Combinations"`.
+   - `column_separator`: The character used as the column separator in the generated recipe files. By default it is `"|"`.
+   - `separator`: The character used as the separator between rows in the generated recipe files. By default it is `"-"`.
+   - `text_position`: The alignment of the text in the generated recipe files (left, center, right). By default it is `"center"`.
+   - `left_padding`: The number of spaces to add on the left side of each cell in the generated recipe files. By default its value is `"0"`.
+   - `right_padding`: The number of spaces to add on the right side of each cell in the generated recipe files. By default its value is `"0"`.
+   - `column_width`: The maximum width of each column in the generated recipe files. If set to 0, it adjusts dynamically based on the content length. By default its value is `"0"`.
+2. `get_recipe_names(self)`
+3. `get_ingredients(self)`
+4. `get_aligned_text(self, text, spacing)`
+5. `get_separators(self, max_cell_lengths, number_of_cells, add_column_separation=True)`
+6. `get_combinations(self, ingredients, number_of_cells)`
+7. `write_combinations(self, file, headers, ingredients)`
+8. `get_recipes(self)`
+9. `try_recipe(self)`
+    
+### `display.py`
+1. `display(file_name)`
+2. `open_file(file_name)`
 
 ## Requirements
 The "re" module, which stands for regular expressions, is part of the standard library in Python. It is available by default when you install Python, and you do not need to install any additional packages or libraries to use it.
@@ -86,5 +101,6 @@ import re
 
 ## Learn More
 To learn more about regular expression, take a look at the following resources:
-- [Python Regular Expression](https://docs.python.org/3/library/re.html)
-- [Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html)
+- Python Regular Expression [HOWTO](https://docs.python.org/3/howto/regex.html)
+- Python `re` [Documentation](https://docs.python.org/3/library/re.html)
+- Python `tkinter` [Documentation](https://docs.python.org/3/library/tkinter.html)
