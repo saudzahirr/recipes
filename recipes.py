@@ -301,7 +301,7 @@ class Recipes:
         
         scorecard = [[" ", " ", " ", " "]] * (len(lines) - 6)
         index = 5
-        while index < len(lines):
+        while index < len(lines) - 1:
             line = lines[index]
             quantities = line.strip("|").split("|")
             quantities = [re.sub("(^\s*|\s*$)", "", a) for a in quantities]

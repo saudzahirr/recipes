@@ -25,7 +25,7 @@ def display(file_name):
             text_widget.delete("1.0", tk.END)  # Clear the existing content.
             text_widget.insert(tk.END, content)  # Insert the content into the Text widget.
 
-    root = tk.Tk()
+    root = tk.Tk("Recipes.")
     
     text_widget = tk.Text(root)
     text_widget.pack()
