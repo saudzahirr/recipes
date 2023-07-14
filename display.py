@@ -7,10 +7,15 @@ from tkinter import filedialog
 
 
 def display():
+    """
+    This function opens a window
+    to display text files.
+    """
+
     def open_file():
         tf = filedialog.askopenfilename(
-            initialdir="", title="Open Recipe", 
-            filetypes=(("Text Files", "*.txt"),)
+            initialdir = "Recipes/", title = "Open Recipe", 
+            filetypes = (("Text Files", "*.txt"),)
         )
         path.insert(END, tf)
         tf = open(tf)
@@ -21,7 +26,7 @@ def display():
     window = Tk()
     window.title("Recipes")
     window.geometry("1080x980")
-    window['bg'] = '#000000'
+    window['bg'] = '#000000'  # Set background color equal to Black.
         
     text_area = Text(window, width = window.winfo_screenwidth(), height = 35)
     text_area.pack(pady = 20)

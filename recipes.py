@@ -183,11 +183,14 @@ class Recipes:
         
         combinations = self.get_combinations(ingredients, len(headers))
         
+        # Adding serial number to each combination.
         for n, combination in enumerate(combinations, start = 1):
             combination.insert(0, str(n))
         
         l = left_padding
         r = right_padding
+
+        # Maximum cell length of each column.
         max_cell_lengths = [max([len(h), len(c)]) + l + r for h, c in zip(headers, combinations[:][-1])]
         
         for max_cell_length in max_cell_lengths:
@@ -201,7 +204,7 @@ class Recipes:
             N *= len(ingredients[key])
             
         combination_text = ""
-        
+    
         for combination in combinations:
             for i in range(len(combination)):
                 string = combination[i]
@@ -253,6 +256,11 @@ class Recipes:
         
     
     def get_recipes(self):
+        """
+        This function writes seperate files of recipes
+        and their respective possible combination of ingredients.
+        """
+
         serial_title = self.serial_title
         
         path = self.output_file_path
@@ -273,13 +281,13 @@ class Recipes:
 
     def try_recipe(self):
         """
-        This functions creates
-        a chef scorecard to rate
-        recipes taste, texture and
-        looks and the total rating
-        of the recipe.
+        This function is used to
+        create a chef scorecard for
+        each and every recipe. It is
+        upto user that he wants to
+        check each and every recipe.
         """
-        
+
         recipe_name = input("Enter recipe name: ")
         
         if recipe_name not in self.names:
@@ -325,7 +333,6 @@ class Recipes:
             texture = str(texture) + "/10"
             looks = str(looks) + "/5"
             total = str(total) + "/30"
-            
             scorecard[index - 5] = [taste, texture, looks, total]
 
             enter = input("Press enter key to continue.")
@@ -347,7 +354,8 @@ class Recipes:
         
         for max_cell_length in max_cell_lengths:
             if column_width != 0 and column_width < max_cell_length:
-                raise Exception("Column width should be greater than or equal to the maximum cell")  
+                raise Exception("Column width should be greater than or equal to the maximum cell")
+
         
         scorecard_file = path + str("chef_scorecard.txt")
         self.scorecard_file = scorecard_file
@@ -386,8 +394,12 @@ class Recipes:
                 line = re.sub("\n", "", line)
                 f.write(line)
 
+                # To avoid overwriting the
+                # text we set the cursor on
+                # the last cursor position.
                 cursor_position = f.tell()
                 f.seek(cursor_position)
+
                 extension = ""
                 for i in range(len(score)):
                     string = score[i]
@@ -400,3 +412,4 @@ class Recipes:
             
             f.write(re.sub("\n", "", lines[2]))
             f.write(self.get_separators(max_cell_lengths, len(headers), add_column_separation = False)[1:])
+            
