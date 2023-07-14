@@ -65,7 +65,32 @@ This code is designed to assist in organizing and generating recipe files. It pr
 <br/>
     
 ## Methods
-### `recipes.py`
+### __main__.py
+The main() function is defined, which serves as the main entry point (boot function) for the program.
+```python
+from recipes import *
+from display import *
+
+file_path = "Recipes/recipes_data.txt"
+
+def main():
+    recipes = Recipes(
+        file_path, output_file_path = "Recipes/",
+        serial_title = "Combinations", column_separator = "|",
+        separator = "-", text_position = "center", left_padding = 0,
+        right_padding = 0, column_width = 0
+    )
+    recipes.get_recipe_names()
+    recipes.get_ingredients()
+    recipes.get_recipes()
+    recipes.try_recipe()
+    
+    display(recipes.scorecard_file)
+
+if __name__ == "__main__":
+    main()
+```
+### recipes.py
 1. `__init__(self, recipes_file_name, output_file_path, serial_title, column_separator, separator, text_position, left_padding, right_padding, column_width)`
    - Constructor method that initializes the `Recipes` object with various parameters, such as file paths, separators, padding, and column width.
    - `recipes_file_name`: The name of the file recipes_data.txt containing the recipe data.
@@ -78,15 +103,24 @@ This code is designed to assist in organizing and generating recipe files. It pr
    - `right_padding`: The number of spaces to add on the right side of each cell in the generated recipe files. By default its value is `"0"`.
    - `column_width`: The maximum width of each column in the generated recipe files. If set to 0, it adjusts dynamically based on the content length. By default its value is `"0"`.
 2. `get_recipe_names(self)`
-3. `get_ingredients(self)`
-4. `get_aligned_text(self, text, spacing)`
-5. `get_separators(self, max_cell_lengths, number_of_cells, add_column_separation=True)`
-6. `get_combinations(self, ingredients, number_of_cells)`
-7. `write_combinations(self, file, headers, ingredients)`
-8. `get_recipes(self)`
-9. `try_recipe(self)`
+   - Reads the recipes_data.txt file and extracts the names of the dishes. Returns a list of recipe names.
+4. `get_ingredients(self)`
+   - Extracts the ingredients for each recipe from the recipes_data.txt file and organizes them in a dictionary. Returns a dictionary with recipe names as keys and ingredient names with their possible weights as values.
+5. `get_aligned_text(self, text, spacing)`
+   - Sets the alignment of the text and returns aligned text based on the specified alignment (left, center, right) and padding.
+6. `get_separators(self, max_cell_lengths, number_of_cells, add_column_separation=True)`
+   - Generates a separator line based on the maximum cell lengths and number of cells in a table. If `add_column_separation` is True, it includes column separators; otherwise, it only includes separators between rows.
+7. `get_combinations(self, ingredients, number_of_cells)`
+   - Generates all possible combinations of ingredients for each recipe and divides them into chunks of size number_of_cells. Returns a list of combinations.
+8. `write_combinations(self, file, headers, ingredients)`
+    - Writes the combinations of ingredients for each recipe to a file. Formats the content with proper alignment and separators.
+9. `get_recipes(self)`
+    - Generates separate text files for each recipe, containing all possible combinations of ingredients. Uses the `write_combinations` method to write the combinations to the files.
+10. `try_recipe(self)`
+    - Allows the user to try each recipe combination and rate it for taste, texture, and looks. Collects the ratings and generates a chef's scorecard file.
+    - The scorecard is user controlled.
     
-### `display.py`
+### display.py
 1. `display(file_name)`
 2. `open_file(file_name)`
 
