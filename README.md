@@ -140,7 +140,7 @@ import tkinter as tk
 `Python 3.11.3`
 
 ## Learn More
-To learn more about regular expression, take a look at the following resources:
+To learn more about regular expression and tkinter, take a look at the following resources:
 - Python Regular Expression [HOWTO](https://docs.python.org/3/howto/regex.html)
 - Python `re` [Documentation](https://docs.python.org/3/library/re.html)
 - Python `tkinter` [Documentation](https://docs.python.org/3/library/tkinter.html)
