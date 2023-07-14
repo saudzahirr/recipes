@@ -17,7 +17,7 @@ This code is designed to assist in organizing and generating recipe files. It pr
 
 ## Usage
 
-1. Ensure that the recipe data file "recipes_data.txt" is present in the "Recipes" folder otherwise update the `file_path` variable in the `__main__.py` with the correct path to your recipes data file (By default it should be in "Recipes" folder).
+1. Ensure that the recipe data file "recipes_data.txt" is present in the "Recipes" folder otherwise update the `file_path` variable in the `__main__.py` with the correct path to your recipes data file.
 2. Ensure you have a recipes data file in the specified format.
    
    ```
@@ -122,14 +122,20 @@ if __name__ == "__main__":
     
 ### display.py
 1. `display(file_name)`
+   - Opens a window and displays the chef's scorecard text file. Reads the content of the file and inserts it into a `Text` widget in a tkinter window.
 2. `open_file(file_name)`
+   - Opens the chef's scorecard text file and reads its content.
 
 ## Requirements
-The "re" module, which stands for regular expressions, is part of the standard library in Python. It is available by default when you install Python, and you do not need to install any additional packages or libraries to use it.
+The `re` module, which stands for regular expressions, is part of the standard library in Python. It is available by default when you install Python, and you do not need to install any additional packages or libraries to use it.
 
 To use the "re" module in your Python code, you can simply import it at the beginning of your script or interactive session like this:
 ```python
 import re
+```
+The `tkinter` module is another important part of the standard library in Python. It provides a powerful and easy-to-use interface for creating graphical user interfaces (GUIs) in Python. Just like the "re" module, "tkinter" is available by default when you install Python, and you don't need to install any additional packages or libraries to use it. Just import it at the beginning of your script like this:
+```python
+import tkinter as tk
 ```
 `Python 3.11.3`
 
