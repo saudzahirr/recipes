@@ -1,51 +1,54 @@
-|       N        |      Milk      |     Sugar      |Vanilla Extract | Whipping Cream |   Egg Yolks    |
-|----------------|----------------|----------------|----------------|----------------|----------------|
-|       1        |     500 ml     |     100 gm     |   1 teaspoon   |     200 ml     |       4        |
-|       2        |     500 ml     |     100 gm     |   1 teaspoon   |     200 ml     |       6        |
-|       3        |     500 ml     |     100 gm     |   1 teaspoon   |     400 ml     |       4        |
-|       4        |     500 ml     |     100 gm     |   1 teaspoon   |     400 ml     |       6        |
-|       5        |     500 ml     |     100 gm     |  2 teaspoons   |     200 ml     |       4        |
-|       6        |     500 ml     |     100 gm     |  2 teaspoons   |     200 ml     |       6        |
-|       7        |     500 ml     |     100 gm     |  2 teaspoons   |     400 ml     |       4        |
-|       8        |     500 ml     |     100 gm     |  2 teaspoons   |     400 ml     |       6        |
-|       9        |     500 ml     |     200 gm     |   1 teaspoon   |     200 ml     |       4        |
-|       10       |     500 ml     |     200 gm     |   1 teaspoon   |     200 ml     |       6        |
-|       11       |     500 ml     |     200 gm     |   1 teaspoon   |     400 ml     |       4        |
-|       12       |     500 ml     |     200 gm     |   1 teaspoon   |     400 ml     |       6        |
-|       13       |     500 ml     |     200 gm     |  2 teaspoons   |     200 ml     |       4        |
-|       14       |     500 ml     |     200 gm     |  2 teaspoons   |     200 ml     |       6        |
-|       15       |     500 ml     |     200 gm     |  2 teaspoons   |     400 ml     |       4        |
-|       16       |     500 ml     |     200 gm     |  2 teaspoons   |     400 ml     |       6        |
-|       17       |     500 ml     |     300 gm     |   1 teaspoon   |     200 ml     |       4        |
-|       18       |     500 ml     |     300 gm     |   1 teaspoon   |     200 ml     |       6        |
-|       19       |     500 ml     |     300 gm     |   1 teaspoon   |     400 ml     |       4        |
-|       20       |     500 ml     |     300 gm     |   1 teaspoon   |     400 ml     |       6        |
-|       21       |     500 ml     |     300 gm     |  2 teaspoons   |     200 ml     |       4        |
-|       22       |     500 ml     |     300 gm     |  2 teaspoons   |     200 ml     |       6        |
-|       23       |     500 ml     |     300 gm     |  2 teaspoons   |     400 ml     |       4        |
-|       24       |     500 ml     |     300 gm     |  2 teaspoons   |     400 ml     |       6        |
-|       25       |    1 liter     |     100 gm     |   1 teaspoon   |     200 ml     |       4        |
-|       26       |    1 liter     |     100 gm     |   1 teaspoon   |     200 ml     |       6        |
-|       27       |    1 liter     |     100 gm     |   1 teaspoon   |     400 ml     |       4        |
-|       28       |    1 liter     |     100 gm     |   1 teaspoon   |     400 ml     |       6        |
-|       29       |    1 liter     |     100 gm     |  2 teaspoons   |     200 ml     |       4        |
-|       30       |    1 liter     |     100 gm     |  2 teaspoons   |     200 ml     |       6        |
-|       31       |    1 liter     |     100 gm     |  2 teaspoons   |     400 ml     |       4        |
-|       32       |    1 liter     |     100 gm     |  2 teaspoons   |     400 ml     |       6        |
-|       33       |    1 liter     |     200 gm     |   1 teaspoon   |     200 ml     |       4        |
-|       34       |    1 liter     |     200 gm     |   1 teaspoon   |     200 ml     |       6        |
-|       35       |    1 liter     |     200 gm     |   1 teaspoon   |     400 ml     |       4        |
-|       36       |    1 liter     |     200 gm     |   1 teaspoon   |     400 ml     |       6        |
-|       37       |    1 liter     |     200 gm     |  2 teaspoons   |     200 ml     |       4        |
-|       38       |    1 liter     |     200 gm     |  2 teaspoons   |     200 ml     |       6        |
-|       39       |    1 liter     |     200 gm     |  2 teaspoons   |     400 ml     |       4        |
-|       40       |    1 liter     |     200 gm     |  2 teaspoons   |     400 ml     |       6        |
-|       41       |    1 liter     |     300 gm     |   1 teaspoon   |     200 ml     |       4        |
-|       42       |    1 liter     |     300 gm     |   1 teaspoon   |     200 ml     |       6        |
-|       43       |    1 liter     |     300 gm     |   1 teaspoon   |     400 ml     |       4        |
-|       44       |    1 liter     |     300 gm     |   1 teaspoon   |     400 ml     |       6        |
-|       45       |    1 liter     |     300 gm     |  2 teaspoons   |     200 ml     |       4        |
-|       46       |    1 liter     |     300 gm     |  2 teaspoons   |     200 ml     |       6        |
-|       47       |    1 liter     |     300 gm     |  2 teaspoons   |     400 ml     |       4        |
-|       48       |    1 liter     |     300 gm     |  2 teaspoons   |     400 ml     |       6        |
--------------------------------------------------------------------------------------------------------
+Ice Cream Recipes.
+
+----------------------------------------------------------------------
+|Combinations| Milk  |Sugar |Vanilla Extract|Whipping Cream|Egg Yolks|
+|------------|-------|------|---------------|--------------|---------|
+|     1      |500 ml |100 gm|  1 teaspoon   |    200 ml    |    4    |
+|     2      |500 ml |100 gm|  1 teaspoon   |    200 ml    |    6    |
+|     3      |500 ml |100 gm|  1 teaspoon   |    400 ml    |    4    |
+|     4      |500 ml |100 gm|  1 teaspoon   |    400 ml    |    6    |
+|     5      |500 ml |100 gm|  2 teaspoons  |    200 ml    |    4    |
+|     6      |500 ml |100 gm|  2 teaspoons  |    200 ml    |    6    |
+|     7      |500 ml |100 gm|  2 teaspoons  |    400 ml    |    4    |
+|     8      |500 ml |100 gm|  2 teaspoons  |    400 ml    |    6    |
+|     9      |500 ml |200 gm|  1 teaspoon   |    200 ml    |    4    |
+|     10     |500 ml |200 gm|  1 teaspoon   |    200 ml    |    6    |
+|     11     |500 ml |200 gm|  1 teaspoon   |    400 ml    |    4    |
+|     12     |500 ml |200 gm|  1 teaspoon   |    400 ml    |    6    |
+|     13     |500 ml |200 gm|  2 teaspoons  |    200 ml    |    4    |
+|     14     |500 ml |200 gm|  2 teaspoons  |    200 ml    |    6    |
+|     15     |500 ml |200 gm|  2 teaspoons  |    400 ml    |    4    |
+|     16     |500 ml |200 gm|  2 teaspoons  |    400 ml    |    6    |
+|     17     |500 ml |300 gm|  1 teaspoon   |    200 ml    |    4    |
+|     18     |500 ml |300 gm|  1 teaspoon   |    200 ml    |    6    |
+|     19     |500 ml |300 gm|  1 teaspoon   |    400 ml    |    4    |
+|     20     |500 ml |300 gm|  1 teaspoon   |    400 ml    |    6    |
+|     21     |500 ml |300 gm|  2 teaspoons  |    200 ml    |    4    |
+|     22     |500 ml |300 gm|  2 teaspoons  |    200 ml    |    6    |
+|     23     |500 ml |300 gm|  2 teaspoons  |    400 ml    |    4    |
+|     24     |500 ml |300 gm|  2 teaspoons  |    400 ml    |    6    |
+|     25     |1 liter|100 gm|  1 teaspoon   |    200 ml    |    4    |
+|     26     |1 liter|100 gm|  1 teaspoon   |    200 ml    |    6    |
+|     27     |1 liter|100 gm|  1 teaspoon   |    400 ml    |    4    |
+|     28     |1 liter|100 gm|  1 teaspoon   |    400 ml    |    6    |
+|     29     |1 liter|100 gm|  2 teaspoons  |    200 ml    |    4    |
+|     30     |1 liter|100 gm|  2 teaspoons  |    200 ml    |    6    |
+|     31     |1 liter|100 gm|  2 teaspoons  |    400 ml    |    4    |
+|     32     |1 liter|100 gm|  2 teaspoons  |    400 ml    |    6    |
+|     33     |1 liter|200 gm|  1 teaspoon   |    200 ml    |    4    |
+|     34     |1 liter|200 gm|  1 teaspoon   |    200 ml    |    6    |
+|     35     |1 liter|200 gm|  1 teaspoon   |    400 ml    |    4    |
+|     36     |1 liter|200 gm|  1 teaspoon   |    400 ml    |    6    |
+|     37     |1 liter|200 gm|  2 teaspoons  |    200 ml    |    4    |
+|     38     |1 liter|200 gm|  2 teaspoons  |    200 ml    |    6    |
+|     39     |1 liter|200 gm|  2 teaspoons  |    400 ml    |    4    |
+|     40     |1 liter|200 gm|  2 teaspoons  |    400 ml    |    6    |
+|     41     |1 liter|300 gm|  1 teaspoon   |    200 ml    |    4    |
+|     42     |1 liter|300 gm|  1 teaspoon   |    200 ml    |    6    |
+|     43     |1 liter|300 gm|  1 teaspoon   |    400 ml    |    4    |
+|     44     |1 liter|300 gm|  1 teaspoon   |    400 ml    |    6    |
+|     45     |1 liter|300 gm|  2 teaspoons  |    200 ml    |    4    |
+|     46     |1 liter|300 gm|  2 teaspoons  |    200 ml    |    6    |
+|     47     |1 liter|300 gm|  2 teaspoons  |    400 ml    |    4    |
+|     48     |1 liter|300 gm|  2 teaspoons  |    400 ml    |    6    |
+----------------------------------------------------------------------
