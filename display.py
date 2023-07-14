@@ -1,39 +1,34 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from tkinter import *
-from tkinter import filedialog
+import tkinter as tk
 
 
 
-def display():
+def display(file_name):
     """
-    This function opens a window
-    to display text files.
+    This function pops up
+    a window and displays
+    the chef's scorecard
+    text file.
     """
 
-    def open_file():
-        tf = filedialog.askopenfilename(
-            initialdir = "Recipes/", title = "Open Recipe", 
-            filetypes = (("Text Files", "*.txt"),)
-        )
-        path.insert(END, tf)
-        tf = open(tf)
-        data = tf.read()
-        text_area.insert(END, data)
-        tf.close()
-        
-    window = Tk()
-    window.title("Recipes")
-    window.geometry("1080x980")
-    window['bg'] = '#000000'  # Set background color equal to Black.
-        
-    text_area = Text(window, width = window.winfo_screenwidth(), height = 35)
-    text_area.pack(pady = 20)
-        
-    path = Entry(window)
-    path.pack(side = LEFT, expand = True, fill = X, padx = 20)
+    def open_file(file_name):
+        """
+        This function opens
+        the chef's scorecard
+        text file.
+        """
 
-    Button(window, text = "Open Recipe", command = open_file).pack(side = RIGHT, expand = True, fill = X, padx = 20)
-        
-    window.mainloop()
+        with open(file_name, "r") as file:
+            content = file.read()
+            text_widget.delete("1.0", tk.END)  # Clear the existing content.
+            text_widget.insert(tk.END, content)  # Insert the content into the Text widget.
+
+    root = tk.Tk()
+    
+    text_widget = tk.Text(root)
+    text_widget.pack()
+    
+    open_file(file_name)  # Call the function to open the file and display its content.
+    root.mainloop()

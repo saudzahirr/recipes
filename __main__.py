@@ -20,7 +20,7 @@ def main():
     recipes.get_recipes()
     recipes.try_recipe()
     
-    display()
+    display(recipes.scorecard_file)
 
 
 
